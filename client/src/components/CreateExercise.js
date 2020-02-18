@@ -23,7 +23,7 @@ class CreateExercise extends Component {
         this.setState({
             loading: true
         })
-        axios.get('http://localhost:5000/users')
+        axios.get('/users')
         .then(res => {
             const users = []
             res.data.forEach(el => users.push({id: el._id, username: el.username}))

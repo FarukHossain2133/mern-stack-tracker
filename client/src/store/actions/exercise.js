@@ -15,7 +15,7 @@ import {
  }
 export const fetchExercise = () => {
     return dispatch => {
-         axios.get('http://localhost:5000/exercises')
+         axios.get('/exercises')
         .then(res => dispatch(exercise(res.data)))
         
     }
@@ -30,7 +30,7 @@ export const createdExercise = (exercise) => {
 
 export const createExercise = (exercise) => {
     return dispatch => {
-    axios.post('http://localhost:5000/exercises/add', exercise)
+    axios.post('/exercises/add', exercise)
     .then(res => {
         dispatch(createdExercise(res.data))
     })
@@ -46,7 +46,7 @@ export const updatedExercise = (exercise) => {
 
 export  const updateExercise = (exercise, id) => {
     return dispatch => {
-        axios.post(`http://localhost:5000/exercises/update/${id}`, exercise)
+        axios.post(`/exercises/update/${id}`, exercise)
         .then(res => {
             dispatch(updatedExercise(res.data))
         })
@@ -70,7 +70,7 @@ export const deletedxercise = (id) => {
 export const deleteExercise = id => {
     return dispatch => {
         dispatch(deleteStartExercise())
-        axios.delete(`http://localhost:5000/exercises/${id}`)
+        axios.delete(`/exercises/${id}`)
             .then(res => dispatch(deletedxercise(id)))
         
     }

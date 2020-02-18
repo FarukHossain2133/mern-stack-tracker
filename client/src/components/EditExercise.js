@@ -23,7 +23,7 @@ import { updateExercise } from '../store/actions/index';
         this.setState({
             loading: true
         })
-        axios.get(`http://localhost:5000/exercises/${this.props.match.params.id}`)
+        axios.get(`/exercises/${this.props.match.params.id}`)
         .then(res => {
             this.setState({
                 username: res.data.username,
@@ -34,7 +34,7 @@ import { updateExercise } from '../store/actions/index';
             })
         })
 
-        axios.get('http://localhost:5000/users')
+        axios.get('/users')
         .then(res => {
             const users = []
             res.data.forEach(el => users.push({id: el._id, username: el.username}))
