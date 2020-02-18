@@ -1,0 +1,24 @@
+
+
+.formElement {
+  width: 60%;
+  margin: 0 auto;
+}
+
+@media (max-width: 992px){
+  .formElement {
+    width: 85%;
+    margin: 0 auto;
+    
+  }
+}
+
+@media (max-width: 552px){
+  .formElement {
+    width: 95%;
+    margin: 0 auto;
+    
+  }
+}
+
+
